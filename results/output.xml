@@ -1,51 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.3 (Python 3.9.5 on linux)" generated="20210615 22:06:27.342" rpa="false" schemaversion="2">
-<suite id="s1" name="Exemple" source="/home/brenoalves/Documentos/Prime-Experts/tests/exemple.robot">
-<test id="s1-t1" name="Caso de Teste 1: Variável Simples">
-<kw name="Imprimir na tela o &quot;Nome Completo&quot; do usuário" library="resource_ex" sourcename="Imprimir na tela o &quot;${FULLNAME}&quot; do usuário">
-<kw name="Log To Console" library="BuiltIn">
+<robot generator="Robot 4.0.3 (Python 3.9.5 on linux)" generated="20210616 15:25:02.033" rpa="false" schemaversion="2">
+<suite id="s1" name="Exercise 2" source="/home/brenoalves/Documentos/Prime-Experts/tests/exercise_2.robot">
+<test id="s1-t1" name="Caso de Teste 1: Argumentos e Retornos">
+<kw name="Criar um email formado por &quot;nome_sobrenome_idade@robot.com&quot;" library="resource_2" sourcename="Criar um email formado por &quot;${EMAIL}&quot;">
+<kw name="Catenate" library="BuiltIn">
+<var>${RESULT}</var>
+<arg>SEPARATOR=_</arg>
 <arg>${NOME}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210615 22:06:27.375" endtime="20210615 22:06:27.376"/>
+<arg>${SOBRENOME}</arg>
+<arg>${IDADE}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210616 15:25:02.066" level="INFO">${RESULT} = breno_alves_27</msg>
+<status status="PASS" starttime="20210616 15:25:02.065" endtime="20210616 15:25:02.066"/>
 </kw>
-<status status="PASS" starttime="20210615 22:06:27.375" endtime="20210615 22:06:27.376"/>
-</kw>
-<status status="PASS" starttime="20210615 22:06:27.374" endtime="20210615 22:06:27.376"/>
-</test>
-<test id="s1-t2" name="Caso de Teste 2: Variável Dicionário">
-<kw name="Imprimir na tela o &quot;Dicionário&quot;" library="resource_ex" sourcename="Imprimir na tela o &quot;${DICTIONARY}&quot;">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${DADOS}</arg>
+<arg>${RESULT}@robot.com</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210615 22:06:27.378" endtime="20210615 22:06:27.379"/>
+<status status="PASS" starttime="20210616 15:25:02.067" endtime="20210616 15:25:02.067"/>
 </kw>
-<status status="PASS" starttime="20210615 22:06:27.378" endtime="20210615 22:06:27.379"/>
+<status status="PASS" starttime="20210616 15:25:02.064" endtime="20210616 15:25:02.067"/>
 </kw>
-<status status="PASS" starttime="20210615 22:06:27.377" endtime="20210615 22:06:27.379"/>
+<status status="PASS" starttime="20210616 15:25:02.064" endtime="20210616 15:25:02.068"/>
 </test>
-<test id="s1-t3" name="Caso de Teste 3: Variável Lista">
-<kw name="Imprimir na tela a lista de &quot;Skills&quot; do usuário" library="resource_ex" sourcename="Imprimir na tela a lista de &quot;${LIST}&quot; do usuário">
-<kw name="Log To Console" library="BuiltIn">
-<arg>${SKILLS}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210615 22:06:27.381" endtime="20210615 22:06:27.381"/>
-</kw>
-<status status="PASS" starttime="20210615 22:06:27.380" endtime="20210615 22:06:27.382"/>
-</kw>
-<status status="PASS" starttime="20210615 22:06:27.380" endtime="20210615 22:06:27.382"/>
-</test>
-<doc>Exemplo: Criação de variáveis, keywords e estrura inicial
-Robot Framework.</doc>
-<status status="PASS" starttime="20210615 22:06:27.343" endtime="20210615 22:06:27.382"/>
+<doc>Exercício 2:
+Criar uma keyword que gera um e-mail
+formado por nome_sobrenome_idade@robot.com</doc>
+<status status="PASS" starttime="20210616 15:25:02.035" endtime="20210616 15:25:02.069"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Exemple">Exemple</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Exercise 2">Exercise 2</stat>
 </suite>
 </statistics>
 <errors>
