@@ -1,5 +1,5 @@
 # Prime Experts
-## Aceleração de testes automatizados com Robot Framework
+## Imersão de testes automatizados com Robot Framework
 
 ### SOBRE O PRIME EXPERTS
 O Prime Experts é um programa de treinamentos em Software Quality Assurance realizado exclusivamente em parceria com universidades. As oficinas buscam capacitar e identificar os melhores alunos, com objetivo de recrutá-los para oportunidades de trabalho na Prime Control.
