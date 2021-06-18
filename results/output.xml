@@ -1,581 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.3 (Python 3.9.5 on linux)" generated="20210617 18:18:33.612" rpa="false" schemaversion="2">
-<suite id="s1" name="Web-Automation" source="/home/brenoalves/Documentos/Prime-Experts/tests/web-automation.robot">
-<test id="s1-t1" name="Caso de Teste 01: Pesquisar produto existente">
-<kw name="Abrir o navegador" library="web-resource" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210617 18:18:33.807" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<msg timestamp="20210617 18:18:33.808" level="INFO">Firefox driver log is always forced to to: /home/brenoalves/Documentos/Prime-Experts/results/geckodriver-70.log</msg>
-<status status="PASS" starttime="20210617 18:18:33.806" endtime="20210617 18:18:36.937"/>
+<robot generator="Robot 4.0.3 (Python 3.9.5 on linux)" generated="20210618 16:06:47.833" rpa="false" schemaversion="2">
+<suite id="s1" name="Mobile-Automation" source="/home/brenoalves/Documentos/Prime-Experts/tests/mobile-automation.robot">
+<test id="s1-t1" name="Caso de Teste 01: Abrindo o youtube">
+<kw name="Abrir o aplicativo" library="mobile-resource" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>appPackage=com.google.android.youtube</arg>
+<arg>appActivity=com.google.android.youtube.HomeActivity</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20210618 16:06:48.636" level="INFO">Could not connect to port 4723 on host localhost</msg>
+<msg timestamp="20210618 16:06:48.636" level="INFO">Could not get IP address for host: localhost</msg>
+<msg timestamp="20210618 16:06:48.638" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fdfd370&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.639" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fdfd4c0&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.640" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fdfd610&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.676" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.642" endtime="20210618 16:06:48.676"/>
 </kw>
-<status status="PASS" starttime="20210617 18:18:33.806" endtime="20210617 18:18:36.938"/>
+<msg timestamp="20210618 16:06:48.677" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.746" level="FAIL">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fdfd760&gt;: Failed to establish a new connection: [Errno 111] Connection refused'))</msg>
+<status status="FAIL" starttime="20210618 16:06:48.631" endtime="20210618 16:06:48.746"/>
 </kw>
-<kw name="Acessar a página inicial do site" library="web-resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210617 18:18:36.941" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20210617 18:18:36.940" endtime="20210617 18:18:40.343"/>
+<status status="FAIL" starttime="20210618 16:06:48.631" endtime="20210618 16:06:48.746"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210617 18:18:50.344" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20210617 18:18:40.343" endtime="20210617 18:18:50.345"/>
+<kw name="Fechar o aplicativo" library="mobile-resource" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.750" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.749" endtime="20210618 16:06:48.750"/>
 </kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210617 18:18:50.353" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210617 18:18:50.345" endtime="20210617 18:18:50.353"/>
+<msg timestamp="20210618 16:06:48.752" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.752" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.748" endtime="20210618 16:06:48.752"/>
 </kw>
-<status status="PASS" starttime="20210617 18:18:36.939" endtime="20210617 18:18:50.354"/>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.754" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.753" endtime="20210618 16:06:48.754"/>
 </kw>
-<kw name="Digitar o nome do produto &quot;Blouse&quot; no campo de pesquisa" library="web-resource" sourcename="Digitar o nome do produto &quot;${PRODUCT}&quot; no campo de pesquisa">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=search_query_top</arg>
-<arg>${PRODUCT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:18:50.359" level="INFO">Typing text 'Blouse' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20210617 18:18:50.357" endtime="20210617 18:18:50.469"/>
+<msg timestamp="20210618 16:06:48.756" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.757" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.753" endtime="20210618 16:06:48.757"/>
 </kw>
-<status status="PASS" starttime="20210617 18:18:50.355" endtime="20210617 18:18:50.470"/>
+<status status="FAIL" starttime="20210618 16:06:48.747" endtime="20210618 16:06:48.757">Several failures occurred:
+
+1) No application is open
+
+2) No application is open</status>
 </kw>
-<kw name="Clicar no botão pesquisar" library="web-resource">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>name=submit_search</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210617 18:18:50.472" level="INFO">Clicking button 'name=submit_search'.</msg>
-<status status="PASS" starttime="20210617 18:18:50.471" endtime="20210617 18:18:51.866"/>
-</kw>
-<status status="PASS" starttime="20210617 18:18:50.470" endtime="20210617 18:18:51.866"/>
-</kw>
-<kw name="Conferir se o produto &quot;Blouse&quot; foi listado no site" library="web-resource" sourcename="Conferir se o produto &quot;${PRODUCT}&quot; foi listado no site">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>class=page-heading</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210617 18:18:51.870" endtime="20210617 18:18:51.949"/>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>Search - My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210617 18:18:51.952" level="INFO">Page title is 'Search - My Store'.</msg>
-<status status="PASS" starttime="20210617 18:18:51.949" endtime="20210617 18:18:51.952"/>
-</kw>
-<kw name="Page Should Contain Image" library="SeleniumLibrary">
-<arg>xpath=//*[@src="${URL}img/p/7/7-home_default.jpg"]</arg>
-<doc>Verifies image identified by ``locator`` is found from current page.</doc>
-<msg timestamp="20210617 18:18:51.963" level="INFO">Current page contains image 'xpath=//*[@src="http://automationpractice.com/img/p/7/7-home_default.jpg"]'.</msg>
-<status status="PASS" starttime="20210617 18:18:51.952" endtime="20210617 18:18:51.964"/>
-</kw>
-<kw name="Page Should Contain Link" library="SeleniumLibrary">
-<arg>xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"${PRODUCT}")]</arg>
-<doc>Verifies link identified by ``locator`` is found from current page.</doc>
-<msg timestamp="20210617 18:18:51.982" level="INFO">Current page contains link 'xpath=//*[@id="center_column"]//a[@class="product-name"][contains(text(),"Blouse")]'.</msg>
-<status status="PASS" starttime="20210617 18:18:51.964" endtime="20210617 18:18:51.982"/>
-</kw>
-<status status="PASS" starttime="20210617 18:18:51.866" endtime="20210617 18:18:51.983"/>
-</kw>
-<kw name="Fechar o navegador" library="web-resource" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210617 18:18:51.984" endtime="20210617 18:18:52.686"/>
-</kw>
-<status status="PASS" starttime="20210617 18:18:51.983" endtime="20210617 18:18:52.686"/>
-</kw>
-<status status="PASS" starttime="20210617 18:18:33.805" endtime="20210617 18:18:52.686"/>
+<status status="FAIL" starttime="20210618 16:06:48.630" endtime="20210618 16:06:48.758">Setup failed:
+MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fdfd760&gt;: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+Also teardown failed:
+Several failures occurred:
+
+1) No application is open
+
+2) No application is open</status>
 </test>
-<test id="s1-t2" name="Caso de Teste 02: Pesquisar produto não existente">
-<kw name="Abrir o navegador" library="web-resource" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210617 18:18:52.689" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<msg timestamp="20210617 18:18:52.690" level="INFO">Firefox driver log is always forced to to: /home/brenoalves/Documentos/Prime-Experts/results/geckodriver-71.log</msg>
-<status status="PASS" starttime="20210617 18:18:52.689" endtime="20210617 18:18:56.526"/>
+<test id="s1-t2" name="Caso de Teste 02: Logar no YouTube">
+<kw name="Abrir o aplicativo" library="mobile-resource" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>appPackage=com.google.android.youtube</arg>
+<arg>appActivity=com.google.android.youtube.HomeActivity</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20210618 16:06:48.760" level="INFO">Could not connect to port 4723 on host localhost</msg>
+<msg timestamp="20210618 16:06:48.760" level="INFO">Could not get IP address for host: localhost</msg>
+<msg timestamp="20210618 16:06:48.761" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd2f430&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.762" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd2f580&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.764" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd2f6d0&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.767" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.765" endtime="20210618 16:06:48.767"/>
 </kw>
-<status status="PASS" starttime="20210617 18:18:52.688" endtime="20210617 18:18:56.527"/>
+<msg timestamp="20210618 16:06:48.769" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.771" level="FAIL">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd1adc0&gt;: Failed to establish a new connection: [Errno 111] Connection refused'))</msg>
+<status status="FAIL" starttime="20210618 16:06:48.759" endtime="20210618 16:06:48.771"/>
 </kw>
-<kw name="Acessar a página inicial do site" library="web-resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210617 18:18:56.530" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20210617 18:18:56.529" endtime="20210617 18:19:00.794"/>
+<status status="FAIL" starttime="20210618 16:06:48.759" endtime="20210618 16:06:48.772"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210617 18:19:10.795" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20210617 18:19:00.795" endtime="20210617 18:19:10.796"/>
+<kw name="Fechar o aplicativo" library="mobile-resource" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.776" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.774" endtime="20210618 16:06:48.776"/>
 </kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210617 18:19:10.799" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210617 18:19:10.796" endtime="20210617 18:19:10.799"/>
+<msg timestamp="20210618 16:06:48.778" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.779" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.773" endtime="20210618 16:06:48.779"/>
 </kw>
-<status status="PASS" starttime="20210617 18:18:56.528" endtime="20210617 18:19:10.799"/>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.780" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.780" endtime="20210618 16:06:48.781"/>
 </kw>
-<kw name="Digitar o nome do produto &quot;itemNãoExistente&quot; no campo de pesquisa" library="web-resource" sourcename="Digitar o nome do produto &quot;${PRODUCT}&quot; no campo de pesquisa">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=search_query_top</arg>
-<arg>${PRODUCT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:19:10.801" level="INFO">Typing text 'itemNãoExistente' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20210617 18:19:10.800" endtime="20210617 18:19:10.872"/>
+<msg timestamp="20210618 16:06:48.782" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.783" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.779" endtime="20210618 16:06:48.783"/>
 </kw>
-<status status="PASS" starttime="20210617 18:19:10.799" endtime="20210617 18:19:10.872"/>
+<status status="FAIL" starttime="20210618 16:06:48.772" endtime="20210618 16:06:48.783">Several failures occurred:
+
+1) No application is open
+
+2) No application is open</status>
 </kw>
-<kw name="Clicar no botão pesquisar" library="web-resource">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>name=submit_search</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210617 18:19:10.874" level="INFO">Clicking button 'name=submit_search'.</msg>
-<status status="PASS" starttime="20210617 18:19:10.874" endtime="20210617 18:19:12.082"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:10.873" endtime="20210617 18:19:12.083"/>
-</kw>
-<kw name="Conferir mensagem de erro &quot;No results were found for your search &quot;itemNãoExistente&quot;&quot;" library="web-resource" sourcename="Conferir mensagem de erro &quot;${ERROR}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath=//*[@id="center_column"]/p[@class="alert alert-warning"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210617 18:19:12.085" endtime="20210617 18:19:12.171"/>
-</kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>xpath=//*[@id="center_column"]/p[@class="alert alert-warning"]</arg>
-<arg>${ERROR}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20210617 18:19:12.172" level="INFO">Verifying element 'xpath=//*[@id="center_column"]/p[@class="alert alert-warning"]' contains exact text 'No results were found for your search "itemNãoExistente"'.</msg>
-<status status="PASS" starttime="20210617 18:19:12.171" endtime="20210617 18:19:12.202"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:12.084" endtime="20210617 18:19:12.202"/>
-</kw>
-<kw name="Fechar o navegador" library="web-resource" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210617 18:19:12.203" endtime="20210617 18:19:12.892"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:12.202" endtime="20210617 18:19:12.892"/>
-</kw>
-<status status="PASS" starttime="20210617 18:18:52.687" endtime="20210617 18:19:12.892"/>
+<status status="FAIL" starttime="20210618 16:06:48.758" endtime="20210618 16:06:48.783">Setup failed:
+MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd1adc0&gt;: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+Also teardown failed:
+Several failures occurred:
+
+1) No application is open
+
+2) No application is open</status>
 </test>
-<test id="s1-t3" name="Caso de Teste 03: Listar Produtos">
-<kw name="Abrir o navegador" library="web-resource" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210617 18:19:12.895" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<msg timestamp="20210617 18:19:12.896" level="INFO">Firefox driver log is always forced to to: /home/brenoalves/Documentos/Prime-Experts/results/geckodriver-72.log</msg>
-<status status="PASS" starttime="20210617 18:19:12.895" endtime="20210617 18:19:16.756"/>
+<test id="s1-t3" name="Caso de Teste 03: Usar método Swipe na tela">
+<kw name="Abrir o aplicativo" library="mobile-resource" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>appPackage=com.google.android.youtube</arg>
+<arg>appActivity=com.google.android.youtube.HomeActivity</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20210618 16:06:48.786" level="INFO">Could not connect to port 4723 on host localhost</msg>
+<msg timestamp="20210618 16:06:48.786" level="INFO">Could not get IP address for host: localhost</msg>
+<msg timestamp="20210618 16:06:48.787" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd33c40&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.788" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd33880&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.789" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd33550&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.791" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.790" endtime="20210618 16:06:48.791"/>
 </kw>
-<status status="PASS" starttime="20210617 18:19:12.894" endtime="20210617 18:19:16.756"/>
+<msg timestamp="20210618 16:06:48.793" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.794" level="FAIL">MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd33130&gt;: Failed to establish a new connection: [Errno 111] Connection refused'))</msg>
+<status status="FAIL" starttime="20210618 16:06:48.785" endtime="20210618 16:06:48.794"/>
 </kw>
-<kw name="Acessar a página inicial do site" library="web-resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210617 18:19:16.759" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20210617 18:19:16.758" endtime="20210617 18:19:21.283"/>
+<status status="FAIL" starttime="20210618 16:06:48.785" endtime="20210618 16:06:48.794"/>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210617 18:19:31.284" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20210617 18:19:21.284" endtime="20210617 18:19:31.284"/>
+<kw name="Fechar o aplicativo" library="mobile-resource" type="TEARDOWN">
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.797" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.796" endtime="20210618 16:06:48.797"/>
 </kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210617 18:19:31.288" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210617 18:19:31.285" endtime="20210617 18:19:31.288"/>
+<msg timestamp="20210618 16:06:48.800" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.801" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.795" endtime="20210618 16:06:48.801"/>
 </kw>
-<status status="PASS" starttime="20210617 18:19:16.757" endtime="20210617 18:19:31.288"/>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20210618 16:06:48.802" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.801" endtime="20210618 16:06:48.802"/>
 </kw>
-<kw name="Passar o mouse por cima da categoria &quot;Women&quot; no menu principal superior de categorias" library="web-resource" sourcename="Passar o mouse por cima da categoria &quot;${CATEGORIES}&quot; no menu principal superior de categorias">
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/a[@class="sf-with-ul"]</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20210617 18:19:31.289" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="block_top_menu"]/ul/li[1]/a[@class="sf-with-ul"]'.</msg>
-<status status="PASS" starttime="20210617 18:19:31.289" endtime="20210617 18:19:31.594"/>
+<msg timestamp="20210618 16:06:48.804" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.805" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20210618 16:06:48.801" endtime="20210618 16:06:48.805"/>
 </kw>
-<status status="PASS" starttime="20210617 18:19:31.288" endtime="20210617 18:19:31.594"/>
+<status status="FAIL" starttime="20210618 16:06:48.794" endtime="20210618 16:06:48.805">Several failures occurred:
+
+1) No application is open
+
+2) No application is open</status>
 </kw>
-<kw name="Clicar na sub categoria &quot;Summer Dresses&quot;" library="web-resource" sourcename="Clicar na sub categoria &quot;${SUB_CATEGORY}&quot;">
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a</arg>
-<arg>${SUB_CATEGORY}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20210617 18:19:31.595" endtime="20210617 18:19:31.846"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210617 18:19:31.846" level="INFO">Clicking link 'xpath=//*[@id="block_top_menu"]/ul/li[1]/ul/li[2]/ul/li[3]/a'.</msg>
-<status status="PASS" starttime="20210617 18:19:31.846" endtime="20210617 18:19:33.783"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:31.595" endtime="20210617 18:19:33.783"/>
-</kw>
-<kw name="Fechar o navegador" library="web-resource" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210617 18:19:33.785" endtime="20210617 18:19:34.489"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:33.784" endtime="20210617 18:19:34.489"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:12.893" endtime="20210617 18:19:34.489"/>
+<status status="FAIL" starttime="20210618 16:06:48.784" endtime="20210618 16:06:48.805">Setup failed:
+MaxRetryError: HTTPConnectionPool(host='localhost', port=4723): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd33130&gt;: Failed to establish a new connection: [Errno 111] Connection refused'))
+
+Also teardown failed:
+Several failures occurred:
+
+1) No application is open
+
+2) No application is open</status>
 </test>
-<test id="s1-t4" name="Caso de Teste 04: Adicionar e Remover Produtos no Carrinho">
-<kw name="Abrir o navegador" library="web-resource" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210617 18:19:34.492" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<msg timestamp="20210617 18:19:34.493" level="INFO">Firefox driver log is always forced to to: /home/brenoalves/Documentos/Prime-Experts/results/geckodriver-73.log</msg>
-<status status="PASS" starttime="20210617 18:19:34.492" endtime="20210617 18:19:38.257"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:34.491" endtime="20210617 18:19:38.258"/>
-</kw>
-<kw name="Acessar a página inicial do site" library="web-resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210617 18:19:38.260" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20210617 18:19:38.259" endtime="20210617 18:19:41.850"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210617 18:19:51.851" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20210617 18:19:41.850" endtime="20210617 18:19:51.851"/>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210617 18:19:51.857" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210617 18:19:51.852" endtime="20210617 18:19:51.857"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:38.258" endtime="20210617 18:19:51.858"/>
-</kw>
-<kw name="Digitar o nome do produto &quot;t-shirt&quot; no campo de pesquisa" library="web-resource" sourcename="Digitar o nome do produto &quot;${PRODUCT}&quot; no campo de pesquisa">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=search_query_top</arg>
-<arg>${PRODUCT}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:19:51.861" level="INFO">Typing text 't-shirt' into text field 'id=search_query_top'.</msg>
-<status status="PASS" starttime="20210617 18:19:51.860" endtime="20210617 18:19:51.949"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:51.858" endtime="20210617 18:19:51.949"/>
-</kw>
-<kw name="Clicar no botão pesquisar" library="web-resource">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>name=submit_search</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210617 18:19:51.951" level="INFO">Clicking button 'name=submit_search'.</msg>
-<status status="PASS" starttime="20210617 18:19:51.950" endtime="20210617 18:19:53.758"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:51.950" endtime="20210617 18:19:53.758"/>
-</kw>
-<kw name="Clicar no botão &quot;Add to cart&quot; do produto" library="web-resource" sourcename="Clicar no botão &quot;${ADD_CART}&quot; do produto">
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>xpath=//*[@id="center_column"]//div[@class="product-container"]</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20210617 18:19:53.764" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="center_column"]//div[@class="product-container"]'.</msg>
-<status status="PASS" starttime="20210617 18:19:53.761" endtime="20210617 18:19:54.094"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=//*[@id="center_column"]//a[1][@class="button ajax_add_to_cart_button btn btn-default"]</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210617 18:19:54.095" level="INFO">Clicking link 'xpath=//*[@id="center_column"]//a[1][@class="button ajax_add_to_cart_button btn btn-default"]'.</msg>
-<status status="PASS" starttime="20210617 18:19:54.094" endtime="20210617 18:19:54.364"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:53.759" endtime="20210617 18:19:54.365"/>
-</kw>
-<kw name="Clicar no botão &quot;Proceed to checkout&quot;" library="web-resource" sourcename="Clicar no botão &quot;${PROCEED}&quot;">
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>xpath=//*[@id="layer_cart"]//a[@class="btn btn-default button button-medium"]</arg>
-<arg>${PROCEED}</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20210617 18:19:54.367" endtime="20210617 18:19:55.064"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=//*[@id="layer_cart"]//a[@class="btn btn-default button button-medium"]</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210617 18:19:55.064" level="INFO">Clicking link 'xpath=//*[@id="layer_cart"]//a[@class="btn btn-default button button-medium"]'.</msg>
-<status status="PASS" starttime="20210617 18:19:55.064" endtime="20210617 18:19:57.488"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:54.366" endtime="20210617 18:19:57.489"/>
-</kw>
-<kw name="Clicar no botão de remoção de produtos (delete) no produto do carrinho" library="web-resource">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>id=1_1_0_0</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210617 18:19:57.490" level="INFO">Clicking link 'id=1_1_0_0'.</msg>
-<status status="PASS" starttime="20210617 18:19:57.490" endtime="20210617 18:19:57.794"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:57.489" endtime="20210617 18:19:57.794"/>
-</kw>
-<kw name="Fechar o navegador" library="web-resource" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210617 18:19:57.795" endtime="20210617 18:19:58.509"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:57.795" endtime="20210617 18:19:58.509"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:34.490" endtime="20210617 18:19:58.510"/>
-</test>
-<test id="s1-t5" name="Caso de Teste 05: Botão Carrinho">
-<kw name="Abrir o navegador" library="web-resource" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210617 18:19:58.513" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<msg timestamp="20210617 18:19:58.514" level="INFO">Firefox driver log is always forced to to: /home/brenoalves/Documentos/Prime-Experts/results/geckodriver-74.log</msg>
-<status status="PASS" starttime="20210617 18:19:58.512" endtime="20210617 18:20:02.439"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:58.512" endtime="20210617 18:20:02.440"/>
-</kw>
-<kw name="Acessar a página inicial do site" library="web-resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210617 18:20:02.450" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20210617 18:20:02.443" endtime="20210617 18:20:05.753"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210617 18:20:15.753" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20210617 18:20:05.753" endtime="20210617 18:20:15.753"/>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210617 18:20:15.757" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210617 18:20:15.754" endtime="20210617 18:20:15.757"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:02.441" endtime="20210617 18:20:15.757"/>
-</kw>
-<kw name="Clicar no ícone carrinho de compras no menu superior direito" library="web-resource">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=//*[@id="header"]/div[3]/div/div/div[3]/div/a</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:15.759" level="INFO">Clicking link 'xpath=//*[@id="header"]/div[3]/div/div/div[3]/div/a'.</msg>
-<status status="PASS" starttime="20210617 18:20:15.758" endtime="20210617 18:20:17.259"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:15.758" endtime="20210617 18:20:17.259"/>
-</kw>
-<kw name="Coferir se o Carrinho está vazio" library="web-resource">
-<kw name="Current Frame Should Contain" library="SeleniumLibrary">
-<arg>Your shopping cart is empty.</arg>
-<arg>class=alert alert-warning</arg>
-<doc>Verifies that the current frame contains ``text``.</doc>
-<msg timestamp="20210617 18:20:17.306" level="INFO">Current frame contains text 'Your shopping cart is empty.'.</msg>
-<status status="PASS" starttime="20210617 18:20:17.260" endtime="20210617 18:20:17.306"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:17.259" endtime="20210617 18:20:17.306"/>
-</kw>
-<kw name="Fechar o navegador" library="web-resource" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210617 18:20:17.308" endtime="20210617 18:20:18.077"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:17.307" endtime="20210617 18:20:18.077"/>
-</kw>
-<status status="PASS" starttime="20210617 18:19:58.511" endtime="20210617 18:20:18.078"/>
-</test>
-<test id="s1-t6" name="Caso de Teste 06: Adicionar Cliente">
-<kw name="Abrir o navegador" library="web-resource" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210617 18:20:18.081" level="INFO">Opening browser 'firefox' to base url 'about:blank'.</msg>
-<msg timestamp="20210617 18:20:18.082" level="INFO">Firefox driver log is always forced to to: /home/brenoalves/Documentos/Prime-Experts/results/geckodriver-75.log</msg>
-<status status="PASS" starttime="20210617 18:20:18.080" endtime="20210617 18:20:22.290"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:18.079" endtime="20210617 18:20:22.290"/>
-</kw>
-<kw name="Acessar a página inicial do site" library="web-resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20210617 18:20:22.292" level="INFO">Opening url 'http://automationpractice.com/'</msg>
-<status status="PASS" starttime="20210617 18:20:22.292" endtime="20210617 18:20:25.590"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210617 18:20:35.591" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20210617 18:20:25.590" endtime="20210617 18:20:35.591"/>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>My Store</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20210617 18:20:35.594" level="INFO">Page title is 'My Store'.</msg>
-<status status="PASS" starttime="20210617 18:20:35.591" endtime="20210617 18:20:35.594"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:22.291" endtime="20210617 18:20:35.594"/>
-</kw>
-<kw name="Clicar no botão superior direito “Sign in”" library="web-resource" sourcename="Clicar no botão superior direito “${LOGIN}”">
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>xpath=//*[@id="header"]/div[2]//a[@class="login"]</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:35.596" level="INFO">Clicking link 'xpath=//*[@id="header"]/div[2]//a[@class="login"]'.</msg>
-<status status="PASS" starttime="20210617 18:20:35.595" endtime="20210617 18:20:38.642"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:35.595" endtime="20210617 18:20:38.643"/>
-</kw>
-<kw name="Inserir um e-mail válido" library="web-resource">
-<kw name="Generate Random String" library="String">
-<var>${EMAIL}</var>
-<arg>5</arg>
-<arg>[LOWER]</arg>
-<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20210617 18:20:38.644" level="INFO">${EMAIL} = gaoti</msg>
-<status status="PASS" starttime="20210617 18:20:38.644" endtime="20210617 18:20:38.645"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=email_create</arg>
-<arg>${EMAIL}${DOMAIN}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:38.646" level="INFO">Typing text 'gaoti@test.com' into text field 'id=email_create'.</msg>
-<status status="PASS" starttime="20210617 18:20:38.645" endtime="20210617 18:20:38.745"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:38.643" endtime="20210617 18:20:38.746"/>
-</kw>
-<kw name="Clicar em &quot;Create an account&quot; para cadastrar" library="web-resource" sourcename="Clicar em &quot;${CREAT_ACCOUNT}&quot; para cadastrar">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>id=SubmitCreate</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:38.748" level="INFO">Clicking button 'id=SubmitCreate'.</msg>
-<status status="PASS" starttime="20210617 18:20:38.747" endtime="20210617 18:20:39.068"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:38.746" endtime="20210617 18:20:39.068"/>
-</kw>
-<kw name="Preencher os campos obrigatórios" library="web-resource">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>id=customer_firstname</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210617 18:20:39.069" endtime="20210617 18:20:41.339"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=customer_firstname</arg>
-<arg>${FIRSTNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:41.340" level="INFO">Typing text 'Breno' into text field 'id=customer_firstname'.</msg>
-<status status="PASS" starttime="20210617 18:20:41.340" endtime="20210617 18:20:41.370"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=customer_lastname</arg>
-<arg>${LASTNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:41.372" level="INFO">Typing text 'Alves' into text field 'id=customer_lastname'.</msg>
-<status status="PASS" starttime="20210617 18:20:41.371" endtime="20210617 18:20:41.409"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>id=passwd</arg>
-<arg>${INFO.Pass}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:41.412" level="INFO">Typing password into text field 'id=passwd'.</msg>
-<msg timestamp="20210617 18:20:41.430" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20210617 18:20:41.457" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20210617 18:20:41.409" endtime="20210617 18:20:41.457"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=firstname</arg>
-<arg>${FIRSTNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:41.458" level="INFO">Typing text 'Breno' into text field 'id=firstname'.</msg>
-<status status="PASS" starttime="20210617 18:20:41.458" endtime="20210617 18:20:41.504"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=lastname</arg>
-<arg>${LASTNAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:41.505" level="INFO">Typing text 'Alves' into text field 'id=lastname'.</msg>
-<status status="PASS" starttime="20210617 18:20:41.504" endtime="20210617 18:20:41.549"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=address1</arg>
-<arg>${INFO.Str}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:41.551" level="INFO">Typing text 'Rua 1' into text field 'id=address1'.</msg>
-<status status="PASS" starttime="20210617 18:20:41.550" endtime="20210617 18:20:41.586"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=city</arg>
-<arg>${INFO.City}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:41.588" level="INFO">Typing text 'Recife' into text field 'id=city'.</msg>
-<status status="PASS" starttime="20210617 18:20:41.587" endtime="20210617 18:20:41.623"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210617 18:20:51.624" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20210617 18:20:41.623" endtime="20210617 18:20:51.624"/>
-</kw>
-<kw name="Select From List By Index" library="SeleniumLibrary">
-<arg>id=id_state</arg>
-<arg>9</arg>
-<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
-<msg timestamp="20210617 18:20:51.625" level="INFO">Selecting options from selection list 'id=id_state' by index 9.</msg>
-<status status="PASS" starttime="20210617 18:20:51.624" endtime="20210617 18:20:51.958"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=postcode</arg>
-<arg>${INFO.Post}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:51.959" level="INFO">Typing text '00000' into text field 'id=postcode'.</msg>
-<status status="PASS" starttime="20210617 18:20:51.958" endtime="20210617 18:20:51.986"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=phone_mobile</arg>
-<arg>${INFO.Phone}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:51.988" level="INFO">Typing text '00000000000' into text field 'id=phone_mobile'.</msg>
-<status status="PASS" starttime="20210617 18:20:51.986" endtime="20210617 18:20:52.029"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:39.068" endtime="20210617 18:20:52.030"/>
-</kw>
-<kw name="Clicar em &quot;Register&quot; para finalizar o cadastro" library="web-resource" sourcename="Clicar em &quot;${REGISTER}&quot; para finalizar o cadastro">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>id=submitAccount</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210617 18:20:52.033" level="INFO">Clicking button 'id=submitAccount'.</msg>
-<status status="PASS" starttime="20210617 18:20:52.031" endtime="20210617 18:20:53.585"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:52.030" endtime="20210617 18:20:53.586"/>
-</kw>
-<kw name="Fechar o navegador" library="web-resource" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210617 18:20:53.588" endtime="20210617 18:20:54.285"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:53.587" endtime="20210617 18:20:54.286"/>
-</kw>
-<status status="PASS" starttime="20210617 18:20:18.079" endtime="20210617 18:20:54.286"/>
-</test>
-<status status="PASS" starttime="20210617 18:18:33.614" endtime="20210617 18:20:54.288"/>
+<status status="FAIL" starttime="20210618 16:06:47.834" endtime="20210618 16:06:48.807"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="Web-Automation">Web-Automation</stat>
+<stat pass="0" fail="3" skip="0" id="s1" name="Mobile-Automation">Mobile-Automation</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20210618 16:06:48.638" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fdfd370&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.639" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fdfd4c0&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.640" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fdfd610&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.677" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.752" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.756" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.761" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd2f430&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.762" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd2f580&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.764" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd2f6d0&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.769" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.778" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.782" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.787" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd33c40&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.788" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd33880&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.789" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7f768fd33550&gt;: Failed to establish a new connection: [Errno 111] Connection refused')': /wd/hub/session</msg>
+<msg timestamp="20210618 16:06:48.793" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.800" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20210618 16:06:48.804" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>
