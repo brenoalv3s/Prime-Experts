@@ -1,5 +1,6 @@
 *** Settings ***
-Resource            ../resources/mobile-resource.robot
+
+Resource            "../resources/kws_mobileautomation.robot"
 
 Test Setup          Abrir o aplicativo
 Test Teardown       Fechar o aplicativo
