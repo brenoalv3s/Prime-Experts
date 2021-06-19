@@ -1,4 +1,5 @@
 *** Settings ***
+
 Resource            "../resources/kws_mobileautomation.robot"
 
 Test Setup          Abrir o aplicativo
