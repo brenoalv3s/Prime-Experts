@@ -1,5 +1,5 @@
 *** Settings ***
-Resource        ../resources/web-resource.robot
+Resource        "../resources/kws_webautomation.robot"
 Test Setup      Abrir o navegador
 Test Teardown   Fechar o navegador
 
